@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Portal - Maid For You</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f6ff;
+      color: #1a1a1a;
+    }
+
+    header {
+      background-color: #cce0ff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 3px solid #99c2ff;
+    }
+
+    header img {
+      height: 80px;
+      border: 1px solid #3366cc;
+    }
+
+    h1 {
+      color: #003399;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #99c2ff;
+      padding: 10px 20px;
+      text-align: center;
+      border-bottom: 2px solid #6699cc;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #003366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px 60px;
+      background-color: #ffffff;
+    }
+
+    section h2, section h3 {
+      color: #003366;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #ffffff;
+    }
+
+    th, td {
+      border: 1px solid #cce0ff;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #dceaff;
+    }
+
+    .button, .action-button {
+      display: inline-block;
+      background-color: #6699cc;
+      color: white;
+      padding: 5px 10px;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .button:hover, .action-button:hover {
+      background-color: #336699;
+    }
+
+    .prompt {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    input[type="password"], input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      margin-bottom: 10px;
+    }
+
+    #portal-content {
+      display: none;
+    }
+  </style>
+
+  <script>
+    function unlockPortal() {
+      const password = document.getElementById('password').value;
+      const name = document.getElementById('employee-name').value;
+      if (password === 'test' && name !== '') {
+        document.getElementById('prompt-form').style.display = 'none';
+        document.getElementById('employee-name-display').textContent = name;
+        document.getElementById('portal-content').style.display = 'block';
+      } else {
+        alert('Please enter the correct password and your name.');
+      }
+    }
+
+    function updateStatus(button, newStatus) {
+      const row = button.closest('tr');
+      const statusCell = row.querySelector('.status-cell');
+      statusCell.textContent = newStatus;
+      const actionsCell = row.querySelector('.actions-cell');
+      actionsCell.innerHTML = '';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img align="left" src="logo.jpg" alt="Maid For You Logo"/>
+    <div>
+      <h1>MAID FOR YOU</h1>
+      <p>Employee Portal</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="home.html#home">Home</a>
+    <a href="home.html#services">Services</a>
+    <a href="home.html#about">About</a>
+    <a href="home.html#contact">Contact</a>
+    <a href="home.html#booking">Booking</a>
+    <a href="employee.html">Employee Portal</a>
+  </nav>
+
+  <!-- Combined Login Form -->
+  <div id="prompt-form" class="prompt">
+    <h2>Employee Login</h2>
+    <input type="text" id="employee-name" placeholder="Enter your name" required /><br>
+    <input type="password" id="password" placeholder="Enter password" required /><br>
+    <button onclick="unlockPortal()" class="button">Enter</button>
+  </div>
+
+  <!-- Main Portal Section -->
+  <div id="portal-content">
+    <section>
+      <h2>Welcome, <span id="employee-name-display"></span>!</h2>
+      <h3>📋 Available Jobs</h3>
+      <table>
+        <tr>
+          <th>Client</th>
+          <th>Service</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>Lance Nathaniel D Orlina</td>
+          <td>General Cleaning</td>
+          <td>June 3, 2025</td>
+          <td>Makati City</td>
+          <td class="status-cell">Available</td>
+          <td class="actions-cell">
+            <button style="background-color: #56AE57;" class="action-button" onclick="updateStatus(this, 'Accepted')">Accept</button>
+            <button style="background-color: #FF6961;" class="action-button" onclick="updateStatus(this, 'Declined')">Decline</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Frenzie Pagdilao</td>
+          <td>Nanny (Whole-Day)</td>
+          <td>June 4–5, 2025</td>
+          <td>Quezon City</td>
+          <td class="status-cell">Available</td>
+          <td class="actions-cell">
+            <button style="background-color: #56AE57;" class="action-button" onclick="updateStatus(this, 'Accepted')">Accept</button>
+            <button style="background-color: #FF6961;" class="action-button" onclick="updateStatus(this, 'Declined')">Decline</button>
+          </td>
+        </tr>
+      </table>
+
+      <h3>🗓️ Weekly Schedule</h3>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Assigned To</th>
+          <th>Service</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>June 1, 2025</td>
+          <td>Chriselle Demerin</td>
+          <td>Deep Cleaning</td>
+          <td>Confirmed</td>
+        </tr>
+        <tr>
+          <td>June 2, 2025</td>
+          <td>Yuri Matute</td>
+          <td>Infant Care</td>
+          <td>Pending</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
