@@ -57,7 +57,8 @@
     section {
       border-bottom: 1px solid #cce0ff;
       padding: 40px 100px;
-      margin-left: 220px; /* space for side menu */
+      margin-left: 220px;
+      margin-right: 270px;
       background-color: #ffffff;
     }
 
@@ -95,7 +96,8 @@
       padding: 20px;
       border-right: 2px solid #cce0ff;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-      height: 100%; min-height: 207.9vh;
+      height: 100%;
+      min-height: 207.9vh;
     }
 
     .side-menu h3 {
@@ -124,6 +126,56 @@
 
     form label {
       font-weight: bold;
+    }
+
+    .right-sidebar {
+      position: absolute;
+      right: 0;
+      top: 170px;
+      width: 350px;
+      height: 1725px;
+      background-color: #f4faff;
+      padding: 20px;
+      border-left: 2px solid #cce0ff;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .right-sidebar h3 {
+      margin-top: 0;
+      color: #003366;
+      font-size: 16px;
+    }
+
+    .right-sidebar ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .right-sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .right-sidebar blockquote {
+      margin: 0 0 20px;
+      padding-left: 10px;
+      border-left: 3px solid #99c2ff;
+      font-style: italic;
+      color: #333;
+    }
+
+    .right-sidebar small {
+      display: block;
+      margin-top: 5px;
+      font-style: normal;
+      color: #666;
+    }
+
+    @media (max-width: 1024px) {
+      .right-sidebar {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -155,12 +207,32 @@
     <a href="employee.html">👩‍💼 Employee Portal</a>
   </div>
 
+  <div class="right-sidebar">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li>✅ Trusted & Vetted Staff</li>
+      <li>✅ Same-Day Booking Available</li>
+      <li>✅ Flexible Packages</li>
+      <li>✅ Child & Pet-Friendly</li>
+    </ul>
+
+    <h3>What Clients Say</h3>
+    <blockquote>
+      “This Helped us find a wonderful nanny in just one day! Highly recommend.”
+      <br><small>– Bana-ag S., Quezon City</small>
+    </blockquote>
+
+    <blockquote>
+      “Their emergency cleaning saved our event. Super professional!”
+      <br><small>– Vailoces R. B., Japan</small>
+    </blockquote>
+  </div>
+
   <section id="home">
     <h2>Welcome to MAID FOR YOU</h2>
     <p>We provide trusted, professional maid and nanny services tailored to your household needs.</p>
     <a href="#booking" class="button">Book a Service</a>
   </section>
-
 
   <section id="services">
     <h2>Our Services</h2>
@@ -200,9 +272,10 @@
     <form>
       <label>Name:<br><input type="text" required /></label><br><br>
       <label>Email:<br><input type="email" required /></label><br><br>
-<label>Location:<br><input type="text" required /></label><br><br>
-<label>Contact Info:<br>
-<input type="tel" id="phone" name="phone" placeholder="0912-345-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" required><br><br>
+      <label>Location:<br><input type="text" required /></label><br><br>
+      <label>Contact Info:<br>
+        <input type="tel" id="phone" name="phone" placeholder="0912-345-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" required>
+      </label><br><br>
       <label>Service:<br>
         <select required>
           <option>General Cleaning – ₱500</option>
