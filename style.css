@@ -1,23 +1,90 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f8ff;
   color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 header {
   background-color: #dce9ff;
   padding: 20px;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+header img {
+  max-width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
 nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   background-color: #bcd4ff;
-  padding: 10px;
-  text-align: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  transition: background-color 0.3s ease;
 }
+
 nav a {
-  margin: 0 15px;
   text-decoration: none;
   color: #1e3d59;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #3366cc;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.button {
+  display: inline-block;
+  background-color: #7baeff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #5d94e6;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #bcd4ff;
+  transition: background-color 0.3s ease;
 }
