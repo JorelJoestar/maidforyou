@@ -175,9 +175,17 @@
     @media (max-width: 1024px) {
       .right-sidebar {
         display: none;
+        #payment-section { display: none; padding: 40px 60px; background-color: #ffffff; }
       }
     }
   </style>
+  <script>
+    function showPaymentSection(event) {
+      event.preventDefault();
+      document.getElementById('booking-section').style.display = 'none';
+      document.getElementById('payment-section').style.display = 'block';
+    }
+  </script>
 </head>
 <body>
   <header>
