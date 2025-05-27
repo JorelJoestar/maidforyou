@@ -88,3 +88,7 @@ footer {
   background-color: #bcd4ff;
   transition: background-color 0.3s ease;
 }
+
+.payment-section {
+  display: none;
+}
